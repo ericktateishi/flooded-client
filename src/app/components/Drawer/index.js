@@ -1,10 +1,18 @@
+import styled from 'styled-components'
 import { withStyles } from "@material-ui/core/styles"
 
-import MuiSwipeableDrawer from "@material-ui/core/SwipeableDrawer"
+import MuiDrawer from "@material-ui/core/Drawer"
 
-export const SwipeableDrawer = withStyles(() => ({
+export const Drawer = withStyles(() => ({
   paper: {
     height: "100%",
     width: "100%",
   },
-}))(MuiSwipeableDrawer)
+}))(MuiDrawer)
+
+export const Center = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`

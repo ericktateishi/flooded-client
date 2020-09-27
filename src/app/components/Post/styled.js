@@ -51,3 +51,7 @@ export const Engagement = styled.div`
     font-weight: bold;
   }
 `
+
+export const PostContainer = styled.div`
+  padding: 0px 10px 80px;
+`

@@ -1,5 +1,7 @@
 import React from 'react'
 
+import { useDrawer } from 'modules/hooks/drawer'
+
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
 import Button from '@material-ui/core/Button'
@@ -8,6 +10,8 @@ import WavesIcon from '@material-ui/icons/Waves'
 import AppTitle from 'app/styled/AppTitle'
 
 const Header = () => {
+  const { setOpenLogin } = useDrawer()
+
   return (
     <AppBar position="static">
       <Toolbar>
@@ -17,7 +21,7 @@ const Header = () => {
         <AppTitle>
           flood st.
         </AppTitle>
-        <Button color="inherit">
+        <Button color="inherit" onClick={() => setOpenLogin(true)}>
           Login
         </Button>
       </Toolbar>
