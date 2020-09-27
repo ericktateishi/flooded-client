@@ -1,4 +1,4 @@
-# flooded-vlient
+# flooded-client
 a client for flooded st.
 
 ### `yarn`
