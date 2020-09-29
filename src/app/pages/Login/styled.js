@@ -16,3 +16,11 @@ export const Subtitle = styled.p`
   font-weight: bold;
   text-align: center;
 `
+
+export const Error = styled.p`
+  color: #db2955;
+  font-weight: bold;
+  text-align: center;
+  font-size: 13px;
+  margin-top: 0px !important;
+`
