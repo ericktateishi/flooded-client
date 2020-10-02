@@ -8,6 +8,10 @@ export const Paper = withStyles(() => ({
     backgroundColor: '#dfe0e2',
     padding: '10px 15px',
     color: '#071013',
+    '@media screen and (min-width: 900px)': {
+      width: '320px',
+      margin: '0px 10px 20px',
+    }
   },
 }))(PaperUI)
 
@@ -41,6 +45,7 @@ export const Engagement = styled.div`
   display: flex;
   align-items: center;
   padding-top: 10px;
+  color: ${props => props.points > 0 ? "#248dfa" : props.points === 0 ? "#071013" : "#DB2955"};
 
   svg {
     font-size: 30px;
@@ -54,4 +59,10 @@ export const Engagement = styled.div`
 
 export const PostContainer = styled.div`
   padding: 0px 10px 80px;
+
+  @media screen and (min-width: 900px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `

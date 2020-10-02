@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useDrawer } from 'modules/hooks/drawer'
 import { usePost } from 'modules/hooks/post'
 
-import { Drawer, Center } from 'app/components/Drawer'
+import { DrawerVertical, Center } from 'app/components/Drawer'
 import Button from '@material-ui/core/Button'
 import Loading from 'app/components/Loading'
 import {
@@ -27,7 +27,7 @@ const Search = () => {
   }
 
   return (
-    <Drawer anchor="bottom" open={openPost} onClose={() => setOpenPost(false)}>
+    <DrawerVertical anchor="bottom" open={openPost} onClose={() => setOpenPost(false)}>
       <Button color="secondary" onClick={() => setOpenPost(false)}>
         Fechar
       </Button>
@@ -47,7 +47,7 @@ const Search = () => {
           </ButtonSubmit>
         }
       </Center>
-    </Drawer>
+    </DrawerVertical>
   )
 }
 

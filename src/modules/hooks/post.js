@@ -28,6 +28,26 @@ const PostProvider = ({ children }) => {
     }
   }
 
+  const reloadPost = async (id) => {
+    try {
+      await sleep(1000)
+      const response = await api.get(`flood/${id}`)
+      if (!response || !response.data || !response.data.id) return
+      
+      const newPost = response.data
+      let index = (posts || []).findIndex(p => p.id === newPost.id)
+
+      if (index < 0) return
+      let newPosts = [...posts]
+
+      newPosts[index] = newPost
+      setPosts(newPosts)
+
+    } catch (error) {
+      console.log(error)
+    }
+  }
+
   const addPage = () => setPage(page + 1)
 
   const search = async (text) => {
@@ -84,6 +104,7 @@ const PostProvider = ({ children }) => {
   return (
     <PostContext.Provider value={{
       posts,
+      reloadPost,
       mainLoading,
       hasMore,
       isLoading,

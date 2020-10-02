@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { useDrawer } from 'modules/hooks/drawer'
 
-import { Drawer, Center } from 'app/components/Drawer'
+import { DrawerHorizontal, Center } from 'app/components/Drawer'
 import Button from '@material-ui/core/Button'
 import LoginPage from './components/Login'
 import SignupPage from './components/Signup'
@@ -25,14 +25,14 @@ const Search = () => {
   }
 
   return (
-    <Drawer anchor="right" open={openLogin} onClose={() => setOpenLogin(false)}>
+    <DrawerHorizontal anchor="right" open={openLogin} onClose={() => setOpenLogin(false)}>
       <Button color="secondary" onClick={() => setOpenLogin(false)}>
         Fechar
       </Button>
       <Center>
         <Page />
       </Center>
-    </Drawer>
+    </DrawerHorizontal>
   )
 }
 

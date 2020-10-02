@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useDrawer } from 'modules/hooks/drawer'
 import { usePost } from 'modules/hooks/post'
+import { useUser } from 'modules/hooks/user'
 
 import SearchField from 'app/components/SearchField'
 import Post from 'app/components/Post'
@@ -13,8 +14,9 @@ import Button from '@material-ui/core/Button'
 import Sunny from 'app/components/Sunny'
 
 const Feed = () => {
-  const { setOpenSearch, setOpenPost } = useDrawer()
+  const { setOpenSearch, setOpenPost, setOpenLogin } = useDrawer()
   const { posts, mainLoading, addPage, isLoading, hasMore } = usePost()
+  const { user } = useUser()
 
   return (
     <Body>
@@ -36,7 +38,7 @@ const Feed = () => {
         {hasMore && <Button color="primary" onClick={addPage} disabled={isLoading} fullWidth>carregar mais</Button>}
       </PostContainer>
 
-      <ButtonFloating variant="contained" color="primary" onClick={() => setOpenPost(true)}>
+      <ButtonFloating variant="contained" color="primary" onClick={() => (user && user.id) ? setOpenPost(true) : setOpenLogin(true)}>
         <AddIcon />
       </ButtonFloating>
     </Body>

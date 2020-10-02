@@ -13,7 +13,7 @@ import Login from 'app/pages/Login'
 const theme = createMuiTheme({
   palette: {
     primary: {
-      main: "#2468FA",
+      main: "#248dfa",
       contrastText: "#FFFFFF",
     },
     secondary: {

@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Container = styled.div`
   display: flex;
   align-items: center;
-  color: #2468FA;
+  color: #248dfa;
   position: sticky;
   top: 0;
   background-color: #fff;
@@ -16,15 +16,15 @@ export const Container = styled.div`
   }
 
   input::placeholder {
-    color: #2468FA;
+    color: #248dfa;
     opacity: 1;
   }
   
   input:-ms-input-placeholder {
-    color: #2468FA;
+    color: #248dfa;
   }
   
   input::-ms-input-placeholder {
-    color: #2468FA;
+    color: #248dfa;
   }
 `
