@@ -8,8 +8,6 @@ const UserContext = createContext({})
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null)
 
-  const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
-
   const setToken = (token) => {
     const decode = jwt.decode(token)
 
@@ -20,7 +18,6 @@ const UserProvider = ({ children }) => {
   }
   
   const login = async (data) => {
-    await sleep(1000)
     const response = await api.post('login', data)
 
     if (
@@ -31,7 +28,6 @@ const UserProvider = ({ children }) => {
   }
 
   const signup = async (data) => {
-    await sleep(1000)
     const response = await api.post('signup', data)
     
     if (

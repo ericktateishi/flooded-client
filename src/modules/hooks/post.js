@@ -11,8 +11,6 @@ const PostProvider = ({ children }) => {
   const [hasMore, setHasMore] = useState(true)
   const [isLoading, setIsLoading] = useState(false)
 
-  const sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms))
-
   const getPosts = async () => {
     try {
       const response = await api.get(`list?page=${page}`)
@@ -30,7 +28,6 @@ const PostProvider = ({ children }) => {
 
   const reloadPost = async (id) => {
     try {
-      await sleep(1000)
       const response = await api.get(`flood/${id}`)
       if (!response || !response.data || !response.data.id) return
       
@@ -52,7 +49,6 @@ const PostProvider = ({ children }) => {
 
   const search = async (text) => {
     try {
-      await sleep(1000)
       const response = await api.get(`list?search=${text}`)
       if (!response || !response.data || response.data.length < 1) return []
 
@@ -66,7 +62,6 @@ const PostProvider = ({ children }) => {
 
   const post = async (data) => {
     try {
-      await sleep(1000)
       const response = await api.post(`post`, data)
       
       if (!response || !response.data || !response.data.id) return
@@ -82,7 +77,6 @@ const PostProvider = ({ children }) => {
     const request = async () => {
       setMainLoading(true)
       await getPosts()
-      await sleep(1000)
       setMainLoading(false)
     }
     
