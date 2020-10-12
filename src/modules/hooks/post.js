@@ -13,7 +13,7 @@ const PostProvider = ({ children }) => {
 
   const getPosts = async () => {
     try {
-      const response = await api.get(`list?page=${page}`)
+      const response = await api.get(`flood?page=${page}`)
       if (!response || !response.data || response.data.length < 1) return setHasMore(false)
 
       if (response.data.length < 10) setHasMore(false)
@@ -49,7 +49,7 @@ const PostProvider = ({ children }) => {
 
   const search = async (text) => {
     try {
-      const response = await api.get(`list?search=${text}`)
+      const response = await api.get(`flood?search=${text}`)
       if (!response || !response.data || response.data.length < 1) return []
 
       return response.data
@@ -62,7 +62,7 @@ const PostProvider = ({ children }) => {
 
   const post = async (data) => {
     try {
-      const response = await api.post(`post`, data)
+      const response = await api.post(`flood`, data)
       
       if (!response || !response.data || !response.data.id) return
       
